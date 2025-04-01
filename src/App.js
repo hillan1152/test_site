@@ -28,7 +28,8 @@ function App() {
       />
       {
         jobs.map((job) => {
-          return <Card key={job.id} title={job.title} description={job.description} />
+          console.log("job", job);
+          return <Card key={job.id} title={job.title} company={job.company} location={job.location} />
         })
       }
     </div>
