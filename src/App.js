@@ -1,9 +1,10 @@
-import './App.css';
+import './App.scss';
 import React, { useState, useEffect } from 'react';
 import CardList from './Components/CardList/CardList.js';
 import Card from './Components/Cards/Card.js';
 import { SearchBar } from './Components/SearchBar/SearchBar.js';
 import { fakeFetchJob } from './Temp-Data/fakeJobs.js';
+import { NavBar } from './Components/NavBar/NavBar.js'; 
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <h1>Job Board</h1>
       {/* <SearchBar /> */}
       <input

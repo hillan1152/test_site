@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.scss";
 
 export const NavBar = props => {
     return (
-        <div>
+        <div className="nav-container">
             <h1>JobFlow</h1>
             <nav>    
                 <ul>
