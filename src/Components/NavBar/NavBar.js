@@ -32,7 +32,7 @@ export const NavBar = () => {
     ]
     
     return (
-        <div style={{ display: 'flex', width: '100%', backgroundColor: 'white', justifyContent: 'start', paddingLeft: '4%' }}>
+        <div style={{ display: 'flex', backgroundColor: 'white', justifyContent: 'start', paddingLeft: '4%' }}>
             <h1>JobFlow</h1>
                 <Menu theme="light" mode="horizontal" items={items} style={{ width: '100%', paddingLeft: '5%', alignItems: 'center' }}/>
                 <Menu theme="light" mode="horizontal" items={items2} style={{ width: '100%',  alignItems: 'center', paddingRight: '5%', display: 'flex', justifyContent: 'flex-end' }}/>

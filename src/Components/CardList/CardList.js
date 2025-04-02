@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CardList.scss';
-import { Card } from 'antd';
+import { Card, Divider } from 'antd';
 
 const { Meta } = Card;
 
@@ -12,22 +12,21 @@ export const CardList = props => {
     };
     return (
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', marginBottom: '5%'}}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', paddingBottom: '5%', alignItems: 'left'}}>
             <Card
-                style={{ width: 500, height: 250 }}
+                style={{ width: 400, height: 250, border: '1px solid lightgrey', textAlign: 'left' }}
                 onClick={() => handleOnClick(props)}
+                hoverable
             >
                 <Meta
                     title={props.title}
                     description={props.company}
+                    style={{ color: 'black', flexDirection: 'column' }}
                 />
-            </Card>
-            {/* <section style={{ display: 'flex', border: '1px solid black', padding: '3%', margin: '10%' }}
-                onClick={() => handleOnClick(props)}>
-                <h1 style={{ color: 'black'}}>{props.title}</h1>
-                <p>{props.company}</p>
                 <p>{props.location}</p>
-            </section> */}
+                <Divider />
+                <p>Lorem ipsum dolor sit amet</p>
+            </Card>
         </div>
     );
 }

@@ -32,7 +32,6 @@ function App() {
     <div className="App">
       <NavBar />
       <h1>Job Flow</h1>
-      {/* <SearchBar /> */}
       <Space.Compact style={{ width: '30%', marginBottom: '3%' }}>
         <Input 
           placeholder="Search"         
@@ -40,13 +39,6 @@ function App() {
         />
         <Button type="primary">Submit</Button>
       </Space.Compact>
-      {/* <input
-        type="text"
-        placeholder="Search Jobs..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ margin: '20px', padding: '5px', width: '300px' }}
-      /> */}
       <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <section>
             {
