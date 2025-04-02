@@ -33,7 +33,7 @@ function App() {
       <NavBar />
       <h1>Job Flow</h1>
       {/* <SearchBar /> */}
-      <Space.Compact style={{ width: '50%', marginBottom: '3%' }}>
+      <Space.Compact style={{ width: '30%', marginBottom: '3%' }}>
         <Input 
           placeholder="Search"         
           onChange={(e) => setSearchTerm(e.target.value)}
