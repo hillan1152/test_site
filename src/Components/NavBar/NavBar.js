@@ -25,8 +25,12 @@ export const NavBar = () => {
             key: '4',
         },
         {
-            label: "Post Job",
+            label: "|",
             key: '5',
+        },
+        {
+            label: "Post Job",
+            key: '6',
         },
 
     ]

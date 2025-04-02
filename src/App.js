@@ -14,23 +14,20 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedJob, setSelectedJob] = useState({});
 
-  const isEmpty = (obj) => {
-    return Object.keys(obj).length === 0;
-  }
   
   // Fetch API Data for Jobs using the search
   useEffect(() => {
+    console.log("search term", searchTerm)
     fakeFetchJob(searchTerm).then((data) => {
       setJobs(data);
     });
   }, [searchTerm]);
 
-  // Gather the selected job from the cardlist
+  // Gather the selected job from the cardlist, if object is empty force first option on list
   useEffect(() => {
+    console.log("selected job", selectedJob)
     setSelectedJob(selectedJob);
-    console.log("selected job", isEmpty(selectedJob))
-    console.log('fakejobs', fakeJobs)
-    if(isEmpty(selectedJob)){
+    if(Object.keys(selectedJob).length === 0){
       setSelectedJob(fakeJobs[0])
     }
     console.log("selected job", selectedJob)
