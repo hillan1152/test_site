@@ -34,17 +34,8 @@ export const NavBar = () => {
     return (
         <div style={{ display: 'flex', width: '100%', backgroundColor: 'white', justifyContent: 'start', paddingLeft: '4%' }}>
             <h1>JobFlow</h1>
-            {/* <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}> */}
-                <Menu theme="light" mode="horizontal" items={items} style={{ width: '100%', marginLeft: '5%', alignItems: 'center' }}/>
-                <Menu theme="light" mode="horizontal" items={items2} style={{ width: '100%',  alignItems: 'center', marginRight: '5%', display: 'flex', justifyContent: 'flex-end' }}/>
-            {/* </div> */}
-            {/* <nav>    
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav> */}
+                <Menu theme="light" mode="horizontal" items={items} style={{ width: '100%', paddingLeft: '5%', alignItems: 'center' }}/>
+                <Menu theme="light" mode="horizontal" items={items2} style={{ width: '100%',  alignItems: 'center', paddingRight: '5%', display: 'flex', justifyContent: 'flex-end' }}/>
         </div>
     );
 };
