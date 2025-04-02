@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CardList from './Components/CardList/CardList.js';
 import CardShow from './Components/Cards/CardShow.js';
 import { SearchBar } from './Components/SearchBar/SearchBar.js';
-import { fakeFetchJob } from './Temp-Data/fakeJobs.js';
+import { fakeFetchJob, fakeJobs } from './Temp-Data/fakeJobs.js';
 import { NavBar } from './Components/NavBar/NavBar.js'; 
 import { Button, Input, Select, Space } from 'antd';
 
@@ -13,6 +13,10 @@ function App() {
   const [jobs, setJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedJob, setSelectedJob] = useState({});
+
+  const isEmpty = (obj) => {
+    return Object.keys(obj).length === 0;
+  }
   
   // Fetch API Data for Jobs using the search
   useEffect(() => {
@@ -24,6 +28,11 @@ function App() {
   // Gather the selected job from the cardlist
   useEffect(() => {
     setSelectedJob(selectedJob);
+    console.log("selected job", isEmpty(selectedJob))
+    console.log('fakejobs', fakeJobs)
+    if(isEmpty(selectedJob)){
+      setSelectedJob(fakeJobs[0])
+    }
     console.log("selected job", selectedJob)
 
   }, [selectedJob]);

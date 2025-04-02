@@ -1,4 +1,4 @@
-const fakeJobs = [
+export const fakeJobs = [
     { id: 1, title: "Web Developer", company: "TechCo", location: "San Francisco, CA" },
     { id: 2, title: "Data Analyst", company: "JobCorp", location: "New York, NY" },
     { id: 3, title: "Frontend Engineer", company: "WebWorks", location: "Los Vegas, NV" },
