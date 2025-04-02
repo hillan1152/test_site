@@ -5,6 +5,9 @@ import CardShow from './Components/Cards/CardShow.js';
 import { SearchBar } from './Components/SearchBar/SearchBar.js';
 import { fakeFetchJob } from './Temp-Data/fakeJobs.js';
 import { NavBar } from './Components/NavBar/NavBar.js'; 
+import { Button, Input, Select, Space } from 'antd';
+
+const { Search } = Input;
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -30,13 +33,20 @@ function App() {
       <NavBar />
       <h1>Job Flow</h1>
       {/* <SearchBar /> */}
-      <input
+      <Space.Compact style={{ width: '50%', marginBottom: '3%' }}>
+        <Input 
+          placeholder="Search"         
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <Button type="primary">Submit</Button>
+      </Space.Compact>
+      {/* <input
         type="text"
         placeholder="Search Jobs..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         style={{ margin: '20px', padding: '5px', width: '300px' }}
-      />
+      /> */}
       <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <section>
             {
@@ -45,7 +55,7 @@ function App() {
               })
             }
         </section>
-        <section style={{ width: '25%'}}>
+        <section style={{ width: '25%' }}>
             <CardShow selectedJob={selectedJob} />
         </section>
       </div>
