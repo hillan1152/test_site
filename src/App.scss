@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,33 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+// Main App Page
+.job-container {
+    display: flex;
+    border: 1px solid black;
+}
+
+
+
+// Queries
+$phone: 480px;
+$tablet: 786px;
+$desktop: 1024px;
+
+// Fonts
+// $header: '"Lato", Arial, sans-serif';
+$title: "Lato", Arial, sans-serif;
+// $nav-style: 'Montserrat,sans-serif';
+$nav-style: 'Questrial', sans-serif;
+$primary: '';
+$secondary: '';
+
+// SEARCH FORM
+$body-background-color: #212a38;
+$body-color: #949ca5;
+$border-color: #080a0e;
+$font-color: #4A2A58;
+$sub-title-color: #1890FF;

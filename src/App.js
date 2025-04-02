@@ -9,12 +9,21 @@ import { NavBar } from './Components/NavBar/NavBar.js';
 function App() {
   const [jobs, setJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [selectedJob, setSelectedJob] = useState({});
+  
+  // Fetch API Data for Jobs using the search
   useEffect(() => {
     fakeFetchJob(searchTerm).then((data) => {
       setJobs(data);
     });
   }, [searchTerm]);
+
+  // Gather the selected job from the cardlist
+  useEffect(() => {
+    setSelectedJob(selectedJob);
+    console.log("selected job", selectedJob)
+
+  }, [selectedJob]);
 
   return (
     <div className="App">
@@ -28,12 +37,18 @@ function App() {
         onChange={(e) => setSearchTerm(e.target.value)}
         style={{ margin: '20px', padding: '5px', width: '300px' }}
       />
-      {
-        jobs.map((job) => {
-          console.log("job", job);
-          return <Card key={job.id} title={job.title} company={job.company} location={job.location} />
-        })
-      }
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        <section>
+            {
+              jobs.map((job) => {
+                return <CardList key={job.id} title={job.title} company={job.company} location={job.location} setSelectedJob={setSelectedJob}/>
+              })
+            }
+        </section>
+        <section>
+            <Card selectedJob={selectedJob} />
+        </section>
+      </div>
     </div>
   );
 }
